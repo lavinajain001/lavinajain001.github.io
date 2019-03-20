@@ -1,0 +1,306 @@
+
+#cities
+{
+    background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align:center;
+    min-width:100%;
+    min-height:100%;
+    color:gray;
+    font-weight: bold;
+    font-size: 30px;
+    position:absolute;
+    top:25%;
+    
+}
+#city
+{
+    background:#1A224b;
+    opacity:0.9;
+    width:20%;
+    position:relative;
+    margin-top:3%;
+    height:50px;
+    text-align:center;
+    font-size: 25px;
+    border :solid 1px;
+    border-radius:17px;
+    color:#91DEDE;
+    vertical-align: middle;
+    padding-top:2%;
+    
+}
+a{
+    text-decoration:none;
+    color:#91DEDE;
+}
+#city:hover,#page:hover,#rest_details:hover
+{  
+    transform: scale(1.1, 1.1);
+    opacity:1;
+}
+.header
+{
+    background: black;
+    opacity:0.9;
+    color:white;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    height:25%;
+    width:100%;
+    text-shadow: 2px 2px #41424A;
+}
+#header_text
+{
+    
+  position:absolute;
+  left:40%;
+  top:1%;
+
+  
+}
+#select
+{
+    color:#404743;
+    font-size:50px;
+    text-shadow: 2px 2px black;
+}
+#restaurant
+{
+    background:#1A224b;
+    opacity:0.9;
+    height:30%;
+    width:20%;
+    margin-left:15%;
+    border-top-left-radius:20px;
+    border-bottom-left-radius: 20px;
+    position:relative;
+}
+#image
+{
+    position:relative;
+    height:95%;
+    width: 97%;
+    margin-left:3%;
+    margin-top:2%;
+}
+#restaurants_list
+{
+    background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top:0%;
+}
+#name
+{
+    position:absolute;
+    
+    margin-left:20%;
+    margin-top:4%;
+    font-size: 30px;
+    color:#91DEDE;
+}
+#rating
+{
+    width:10%;
+    position:absolute;
+    margin-left:6%;
+    margin-top:13%;
+    font-size:30px;
+    color:#91DEDE;
+    width:2%;
+}
+#votes
+{
+    margin-left:16%;
+    position:absolute;
+    margin-top:13%;
+    font-size:30px;
+    color:#91DEDE;
+    width:5%;
+}
+
+#page
+{
+    float:left;
+    margin-left:2%;
+    border:solid 1px;
+    border-radius: 60px;
+    width:30px;
+    margin-top:2%;
+    height:4%;
+    background: #1A224b;
+    opacity:0.9;
+    text-decoration:none;
+    text-align: center;
+    padding:1%;
+      
+}
+#page.a
+{
+    color:#91DEDE;
+}
+#pagination
+{
+     margin-left: 40%;
+    
+}
+a:hover
+{       
+    cursor: pointer;
+}
+#details
+{
+    background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top:0%;
+}
+#image_detail
+{
+    width:97%;
+    height:100%;
+    margin-top:2%;
+}
+#table_list
+{
+    position: absolute;
+    font-size:30px;
+    color:#91DEDE;
+    background: #1A224b;
+    opacity:0.9;
+    height:29.8%;
+    width:50%;
+    margin-left:34%;
+    margin-top:0%;
+    border-top-right-radius:20px;
+    border-bottom-right-radius: 20px;
+   
+}
+#cost,#address,#table_details,#div_review,#user
+{
+    font-size:20px;
+    color:#91DEDE;
+    background: #1A224b;
+    opacity:0.9;   
+    min-height:4%;
+    width:68%;
+    margin-top:2%;
+    margin-left:15%;
+    padding-left:2%;
+    padding-top:1%;
+    padding-bottom:1%;
+    border-radius:20px;
+}
+#user_image
+{
+        border-radius:50%;
+        height:7%;
+        width:7%;
+}
+#user_name
+{
+    margin-left:4%;
+    margin-top:0.6%;
+    position: absolute;
+    font-size: 25px;
+}
+#rating_stars
+{
+    margin-left:4%;
+    margin-top:0.6;
+    position: absolute;
+    font-size: 20px;
+}
+#detailed_image
+{
+    width: 70%;
+    height:50%;
+    margin-left:14%;
+    text-align:center;
+}
+#a_review
+{
+    
+    color:#91DEDE;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top:4%;
+
+    
+}
+#reviews_all
+{
+    background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top:0%;
+}
+#a_review:hover
+{
+    text-decoration: underline;
+}
+.header_reviews
+{
+    background: black;
+    opacity:0.9;
+    color:white;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    height:30%;
+    width:100%;
+    text-shadow: 2px 2px #41424A;
+}
+#user_reviews
+    {
+        font-size:20px;
+        color:#91DEDE;
+        background: #1A224b;
+        opacity:0.9;   
+        min-height:4%;
+        width:68%;
+        margin-top:0%;
+        margin-left:15%;
+        padding-left:2%;
+        padding-top:1%;
+        padding-bottom:1%;
+        border-radius:20px;
+    }
+    #near_restaurant
+    {
+        font-size:20px;
+        color:#91DEDE;
+        background: #1A224b;
+        opacity:0.9;   
+        min-height:4%;
+        margin-top:20%;
+        border-radius:20px;
+    }
+    #like
+    {
+        background-color: rgba(0,0,0,0);
+        width:1%;
+        height:1%;
+        border:1%;
+    }
+   #nearby
+    {
+        font-size:20px;
+        color:#91DEDE;
+        background: #1A224b;
+        opacity:0.9;   
+        min-height:4%;
+        margin-top:20%;
+        border-radius:20px;
+        
+    }
+#near
+{
+        font-size:20px;
+        color:#91DEDE;
+        text-align:center;
+}
+
