@@ -66,23 +66,22 @@ a.onload = function ()
         var td2=document.createElement('td');
         td2.setAttribute('id','like');
         td2.setAttribute('align','right');
-        button.setAttribute('name','\u1F44D');
+	    
+	//create like button    
         button.setAttribute('id','like_button');
-
-        //button.setAttribute('value','on');
         var values=document.createTextNode("Like");
         button.appendChild(values);
         button.setAttribute('value','like');
         button.setAttribute('onclick',"like();");
-	 if(window.localStorage.getItem(r_id))
-  {
- button.style.background=("rgb(0, 128, 255)"); 
+        if(window.localStorage.getItem(r_id))
+        {
+		button.style.background=("rgb(0, 128, 255)"); 
    
-  }
-  else
-  {
-       button.style.background=("rgb(255, 255, 255)");
-  }
+  	}
+  	else
+  	{
+      		 button.style.background=("rgb(255, 255, 255)");
+  	}
         td2.appendChild(button);
 
        
@@ -156,7 +155,6 @@ a.onload = function ()
                     
 
                              div3.appendChild(div31);
-                            // div3.appendChild(user_name);
                              div3.appendChild(review_text);
                              y.appendChild(div3);
 
@@ -202,19 +200,19 @@ a.onload = function ()
     function like()
     {
         
-  var liked=document.getElementById('like_button');
-  if(window.localStorage.getItem(r_id))
-  {
-      liked.style.background=("rgb(255, 255, 255)");
-    window.localStorage.removeItem(r_id);
-    liked.value="liked";
-  }
-  else
-  {
-     liked.style.background=("rgb(0, 128, 255)"); 
-     window.localStorage.setItem(r_id,'liked');
-     liked.value="liked";
-  }
-
-  liked.style.border=("0px")
+ 	 var liked=document.getElementById('like_button');
+  	 if(window.localStorage.getItem(r_id))
+ 	 {
+     		 liked.style.background=("rgb(255, 255, 255)");
+    		 window.localStorage.removeItem(r_id);
+   		 liked.value="liked";
+  	  }
+  	  else
+          {
+                 liked.style.background=("rgb(0, 128, 255)"); 
+                 window.localStorage.setItem(r_id,'liked');
+                  liked.value="liked";
+          }
+ 
+           liked.style.border=("0px")
     }
