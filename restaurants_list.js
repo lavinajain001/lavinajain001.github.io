@@ -1,13 +1,28 @@
-var r = new XMLHttpRequest();
+
 var urlParams = new URLSearchParams(window.location.search);
 
-//get page no.
+//get variables.
 var pno=Number(urlParams.get('pno'));
 var latitude=Number(urlParams.get('lat'));
-var longitude=Number(urlParams.get('lon'));          
+var longitude=Number(urlParams.get('lon'));  
+var x=document.getElementById("restaurants_list");
+
 
 //get city id
 var id=urlParams.get('id'); 
+
+//infinite paging
+load(pno);
+window.addEventListener("scroll",function(event) {
+  var scrollHeight = this.scrollY;
+  y=scrollHeight+ window.innerHeight;
+  if(y > x.offsetHeight) {
+  load(++pno);
+  }
+  });
+function load(pno)
+{
+var r = new XMLHttpRequest();
 r.open("GET", "https://developers.zomato.com/api/v2.1/search?entity_id="+id+"&entity_type=city&start="+10*(pno-1)+ "&count=10 &lat="+latitude+"&lon="+longitude+"&sort=real_distance&order=asc",true);
 r.setRequestHeader('Accept', 'application/json');
 r.setRequestHeader('user-key','36f0d5e50d2bd8f1ff1e8a8d087dddc4');
@@ -20,16 +35,11 @@ r.onload = function ()
         n=Number(request.restaurants.length);
 
         //display restaurant's list in a given city
-        list(0); 
-
-        //paging
-        paging();  
+        list(0);   
     }
 }
 r.send();
 
-var x=document.getElementById("restaurants_list");
-var pagination=document.getElementById("pagination");
 
 function list(i)
 {
@@ -85,10 +95,6 @@ function list(i)
     tr2.appendChild(td3);
     tr2.appendChild(td4);
     table.appendChild(tr1);
-         
-
-                
-
                
   var q = new XMLHttpRequest();
   var reviews;
@@ -127,67 +133,4 @@ function list(i)
   list(i+1);
   }
 }
-function paging()
-{
-  if(pno==1)
-  {
-    var limit=Number(pno)+3
-    for(var i=pno;i<limit;i++)
-    {
-      var div1=document.createElement('div');
-      div1.setAttribute('id','page');
-      var a1=document.createElement('a');
-      var next=document.createTextNode(i);
-      a1.appendChild(next);
-      a1.setAttribute('href',"restaurants_list.html?id="+id+"&pno="+i+ "&count=10 &lat="+latitude+"&lon="+longitude+"&sort=real_distance&order=asc");
-      div1.appendChild(a1);
-      pagination.appendChild(div1);
-
-    }
-    //for next arrow
-    var div2=document.createElement('div');
-    div2.setAttribute('id','page');
-    var a2=document.createElement('a');
-    var arrow=document.createTextNode("Next");
-    a2.setAttribute('href',"restaurants_list.html?id="+id+"&pno="+(pno+1)+ "&count=10 &lat="+latitude+"&lon="+longitude+"&sort=real_distance&order=asc");
-    a2.appendChild(arrow);
-    div2.appendChild(a2);
-    // page.appendChild(a2);
-    pagination.appendChild(div2);
-  }
-  else
-  {
-    var div1=document.createElement('div');
-    div1.setAttribute('id','page');
-    var limit=Number(pno)+3;
-    var a1=document.createElement('a');
-    var prev_arrow=document.createTextNode("Prev");
-    a1.setAttribute('href',"restaurants_list.html?id="+id+"&pno="+(pno-1)+ "&count=10 &lat="+latitude+"&lon="+longitude+"&sort=real_distance&order=asc");
-    a1.appendChild(prev_arrow);
-    div1.appendChild(a1);
-    // page.appendChild(a1);
-    pagination.appendChild(div1);
-    for(var i=pno-1;i<limit;i++)
-    {
-      var div2=document.createElement('div');
-      div2.setAttribute('id','page');
-      var a2=document.createElement('a');
-      var text=document.createTextNode(i);
-      a2.setAttribute('href',"restaurants_list.html?id="+id+"&pno="+i+ "&count=10 &lat="+latitude+"&lon="+longitude+"&sort=real_distance&order=asc");
-      a2.appendChild(text);
-      div2.appendChild(a2);
-      // page.appendChild(a2);
-      pagination.appendChild(div2);
-    }
-
-    var div3=document.createElement('div');
-    div3.setAttribute('id','page');
-    var a3=document.createElement('a');
-    var next_arrow=document.createTextNode("Next");
-    a3.setAttribute('href',"restaurants_list.html?id="+id+"&pno="+(pno+1)+ "&count=10 &lat="+latitude+"&lon="+longitude+"&sort=real_distance&order=asc");
-    a3.appendChild(next_arrow);
-    div3.appendChild(a3);
-    //page.appendChild(a3);
-    pagination.appendChild(div3);
-   }
 }
